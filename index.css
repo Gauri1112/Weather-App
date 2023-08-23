@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+:root{
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    color: var(--colorLight2);
+    background-image: linear-gradient(160deg,#112d4e 0%,#3f72af 100%);
+}
+
+h1{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.tab-container{
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab{
+    cursor: pointer;
+    font-size: 0.75rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+}
+
+.tab.current-tab{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+
+.weather-container{
+    margin-block: 4rem;
+}
+
+.access-btn{
+    all: unset;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: var(--colorDark2);
+    cursor: pointer;
+    padding: 10px 30px;
+}
+
+.sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.grant-access-location{
+    display: none;
+}
+
+.grant-access-location.active{
+    display: flex;
+}
+.grant-access-location img{
+    margin-bottom: 2rem;
+}
+
+.grant-access-location p:first-of-type{
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.grant-access-location p:last-of-type{
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+.loading-container{
+    display: none;
+}
+
+.loading-container.active{
+    display: flex;
+}
+
+.loading-container p{
+    text-transform: uppercase;
+}
+
+.user-info-container{
+    display: none;
+}
+
+.user-info-container.active{
+    display: flex;
+}
+
+.name{
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.name p{
+    font-size: 2rem;
+}
+
+.user-info-container p{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.user-info-container img{
+    width: 90px;
+    height: 90px;
+}
+.name img{
+    width: 30px;
+    height: 30px;
+}
+
+.user-info-container p[temperature]{
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+.weather-info{
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.box{
+    width: 30%;
+    max-width: 200px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.box img{
+    width: 50px;
+    height: 50px;
+}
+
+.box p:first-of-type{
+    text-transform: uppercase;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.box p:last-of-type{
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.search-container{
+    display: none;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+    margin-bottom: 3rem;
+}
+
+.search-container.active{
+    display: flex;
+}
+
+.search-container input{
+    all: unset;
+    width: calc(100% - 80px);
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+.search-container input::placeholder{
+    color: rgba(255,255,255,0.7);
+}
+
+.search-container input:focus{
+    outline: 3px solid rgba(255,255,255,0.7);
+}
+
+.search-container .button{
+    all: unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--colorDark2);
+}
+
+.error{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.error.active{
+    display: flex;
+}
+
+.error img{
+    height: 250px;
+    width: 250px;
+}
+
+.error p{
+    color: white;
+    font-size: 1rem;
+}
+
+@media(max-width: 756px){
+    .weather-info{
+        flex-direction: column;
+    }
+    .box{
+        width: 100%;
+    }
+    h1{
+        font-size: 1.75rem;
+    }
+    .tab-container{
+        margin-top: 2rem;
+    }
+}
