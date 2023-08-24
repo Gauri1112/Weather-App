@@ -58,7 +58,7 @@ function getfromSessionStorage() {
 
 async function fetchUserWeatherInfo(coordinates) {
     let { lat, lon } = coordinates;
-
+    
     loadingcontainer.classList.add('active');
 
     try {
@@ -141,8 +141,7 @@ const accessBtn = document.querySelector('.access-btn');
 accessBtn.addEventListener('click', getLocation);
 
 const searchInput = document.querySelector('[search-input]');
-const btn = document.querySelector('[btn]');
-btn.addEventListener('click', (e) => {
+searchContainer.addEventListener('submit', (e) => {
     e.preventDefault();
     let city = searchInput.value;
 
@@ -156,7 +155,7 @@ async function fetchSearchWeatherInfo(city) {
     loadingcontainer.classList.add("active");
     userInfoContainer.classList.remove("active");
     grantAccessLocation.classList.remove("active");
-
+    notFound.classList.remove('active');
     try {
 
         let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`);
